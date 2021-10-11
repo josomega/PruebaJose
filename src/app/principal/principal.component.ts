@@ -27,9 +27,7 @@ export class PrincipalComponent implements OnInit {
     this.rows.push(test);
   }
 
-  removeItem(index: number){
-    this.rows.splice(index, 1);
-  }
+
   }
   
   
