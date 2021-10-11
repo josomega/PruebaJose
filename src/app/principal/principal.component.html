@@ -1,0 +1,54 @@
+<div class="row m-5">
+    <div class="col">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Agregar mascota al listado</h1>
+            </div>
+        </div>
+<form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" >
+    <input type = "text" name = "nombrecompleto" placeholder = "nombre de mascota" ngModel>
+    <br/>
+    <br/>
+    <input type = "text" name = "raza" placeholder = "Raza " ngModel>
+    <br/>
+    <br/>
+    <input type = "text" name = "edad" placeholder = "Edad" ngModel>
+    <br/>
+    <br/>
+    <input type = "submit"  value = "Send">
+  </form>
+  <div class="row">
+            <div class="col">
+                <hr />
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Raza</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of rows; index as i">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>
+                                {{ item.nombre }}
+                            </td>
+                            <td>
+                                {{ item.raza }}
+                            </td>
+                            <td>
+                                {{ item.edad }}
+                            </td>
+                            <td> |
+                                <button type="button" class="btn btn-danger" >Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
