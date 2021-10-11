@@ -6,21 +6,21 @@
             </div>
         </div>
 <form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" >
-    <input type = "text" name = "nombrecompleto" placeholder = "nombre de mascota" ngModel>
+    <input type = "text" class= "form-control" name = "nombrecompleto" placeholder = "nombre de mascota" ngModel>
     <br/>
     <br/>
-    <input type = "text" name = "raza" placeholder = "Raza " ngModel>
+    <input type = "text" class= "form-control" name = "raza" placeholder = "Raza " ngModel>
     <br/>
     <br/>
-    <input type = "text" name = "edad" placeholder = "Edad" ngModel>
+    <input type = "text" class= "form-control" name = "edad" placeholder = "Edad" ngModel>
     <br/>
     <br/>
-    <input type = "submit"  value = "Send">
+    <input type = "submit" class="btn btn-success" value = "Send">
   </form>
   <div class="row">
             <div class="col">
                 <hr />
-                <table class="table">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -43,7 +43,7 @@
                                 {{ item.edad }}
                             </td>
                             <td> |
-                                <button type="button" class="btn btn-danger" >Borrar</button>
+                                <button type="button" class="btn btn-danger" (click)= "Borrar(item.id)">Borrar</button>
                             </td>
                         </tr>
                     </tbody>

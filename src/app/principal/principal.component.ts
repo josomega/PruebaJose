@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { Listadomascota } from 'src/app/models/listadomascota';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { idText } from 'typescript';
+
 
 @Component({
   selector: 'app-principal',
@@ -23,10 +24,13 @@ export class PrincipalComponent implements OnInit {
   }
   rows: Listadomascota [] = [];
   onSubmit(form: NgForm) {
-    var test: Listadomascota = {nombre: form.value.nombrecompleto, raza: form.value.raza, edad: form.value.edad} ;  
+    var test: Listadomascota = {nombre: form.value.nombrecompleto, raza: form.value.raza, edad: form.value.edad, id: this.rows.length} ;  
     this.rows.push(test);
   }
 
+  Borrar(id: number){
+    this.rows= this.rows.filter(item => item.id !== id)
+  }
 
   }
   
